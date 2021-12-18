@@ -16,6 +16,10 @@ class Stack:
     def is_empty(self):
         return self.items == []
 
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+
 stack = Stack()
 # stack.push("Ajibola")
 # stack.push("Adebayo")
@@ -25,4 +29,5 @@ stack = Stack()
 # stack.pop()
 # print(stack.get_stack())
 print(stack.is_empty())
+print(stack.peek())
     
