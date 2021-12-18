@@ -12,4 +12,13 @@ class Stack:
 
     def get_stack(self):
         return self.items
+
+stack = Stack()
+stack.push("Ajibola")
+stack.push("Adebayo")
+print(stack.get_stack())
+stack.push("Rilwan")
+print(stack.get_stack())
+stack.pop()
+print(stack.get_stack())
     
