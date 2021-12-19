@@ -7,11 +7,13 @@ from stack import Stack
 def reverse_string(stack, input_str):
     for i in range(len(input_str)):
         stack.push(input_str[i])
+        # print(stack)  
     reverse_str = ""
     while not stack.is_empty():
         reverse_str += stack.pop()
-    reverse_str
+        # print(reverse_str)
+    return reverse_str
 
 s = Stack()
-input_str = "Welcome to Nigeria!"
+input_str = "!airegiN ot emocleW"
 print(reverse_string(s, input_str))
