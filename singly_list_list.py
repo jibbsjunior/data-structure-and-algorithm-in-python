@@ -30,11 +30,21 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
+    def insert_after_node(self, prev_node, data):
+        if not prev_node:
+            print("Previous node does not exist")
+            return
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+        print(prev_node.next)
+
 node = LinkedList()
 node.append("A")
 node.append("B")
 node.append("C")
 node.append("D")
 node.append("E")
+print(node.insert_after_node(node.head.next, "M"))
 print(node.print_list())
     
