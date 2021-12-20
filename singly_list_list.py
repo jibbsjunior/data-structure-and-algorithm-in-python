@@ -24,6 +24,11 @@ class LinkedList:
         while cur_node:
             print(cur_node.data)
             cur_node = cur_node.next
+    
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
 node = LinkedList()
 node.append("A")
