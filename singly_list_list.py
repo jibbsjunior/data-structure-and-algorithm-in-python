@@ -39,6 +39,14 @@ class LinkedList:
         prev_node.next = new_node
         print(prev_node.next)
 
+    def delete_node(self, key):
+        cur_node = self.head
+
+        if cur_node and cur_node.data == key:
+            self.head = cur_node.next
+            cur_node = None
+            return
+
 node = LinkedList()
 node.append("A")
 node.append("B")
@@ -46,5 +54,6 @@ node.append("C")
 node.append("D")
 node.append("E")
 print(node.insert_after_node(node.head.next, "M"))
+print(node.delete_node("B"))
 print(node.print_list())
     
