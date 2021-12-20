@@ -8,3 +8,10 @@ class LinkedList:
     def __init__(self) -> None:
         self.head = None
         pass
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+    
