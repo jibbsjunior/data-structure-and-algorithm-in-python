@@ -35,7 +35,7 @@ def decimal_to_binary(dec_num):
 
     return bin_num
 
-# s = Stack()
+s = Stack()
 # # dec = 112
 # print(dec_to_bin(s, 12))
 # print(dec_to_bin(s, 112))
@@ -43,5 +43,6 @@ def decimal_to_binary(dec_num):
 # print(dec_to_bin(s, 27))
 # print(dec_to_bin(s, 48))
 # print(dec_to_bin(s, 98))
-print(decimal_to_binary(21))
+# print(decimal_to_binary(21))
+print(int(dec_to_bin(s,121),2)==121)
 
