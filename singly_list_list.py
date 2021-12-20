@@ -46,6 +46,16 @@ class LinkedList:
             self.head = cur_node.next
             cur_node = None
             return
+        prev = None
+        while cur_node and cur_node.data != key:
+            prev = cur_node
+            cur_node = cur_node.next
+
+        if cur_node is None:
+            return
+        
+        prev.next = cur_node.next
+        cur_node = None
 
 node = LinkedList()
 node.append("A")
@@ -54,6 +64,6 @@ node.append("C")
 node.append("D")
 node.append("E")
 print(node.insert_after_node(node.head.next, "M"))
-print(node.delete_node("B"))
+print(node.delete_node("M"))
 print(node.print_list())
     
