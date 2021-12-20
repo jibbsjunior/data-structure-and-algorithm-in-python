@@ -3,16 +3,18 @@
 # print(60 % 2)
 from stack import Stack
 def dec_to_bin(stack, dec_num):
-    value = []
-    bin_num = []
-    value.append(dec_num)
+    if dec_num == 0:
+        return 0
+    temp = []
+    bin_num = ""
+    temp.append(dec_num)
     while dec_num > 1:
-        value.append(dec_num//2)
+        temp.append(dec_num//2)
         dec_num = dec_num//2
-    for i in value:
+    for i in temp:
         stack.push(i%2)
     while not stack.is_empty():
-        bin_num.append(stack.pop())
+        bin_num += str(stack.pop())
     return bin_num
 
 
