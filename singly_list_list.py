@@ -118,6 +118,8 @@ class LinkedList:
         else:
             self.head = curr_1
 
+        curr_1.next, curr_2.next = curr_2.next, curr_1.next
+
 
 
 node = LinkedList()
