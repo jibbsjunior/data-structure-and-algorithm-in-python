@@ -92,7 +92,19 @@ class LinkedList:
         return 1 + self.len_of_linked_list_using_recursive_method(node.next)
     
     def node_swap(self, key_1, key_2):
-        
+        if key_1 == key_2:
+            return
+
+        prev_1, curr_1 = None, self.head
+        while prev_1 and curr_1.data != key_1:
+            prev_1 = curr_1
+            curr_1 = curr_1.next
+
+        prev_2, curr_2 = None, self.head
+        while prev_2 and curr_2.data != key_2:
+            prev_2 = curr_2
+            curr_2 = curr_2.next
+
 
 
 node = LinkedList()
