@@ -90,6 +90,9 @@ class LinkedList:
         if node is None:
             return 0
         return 1 + self.len_of_linked_list_using_recursive_method(node.next)
+    
+    def node_swap(self, key_1, key_2):
+        
 
 
 node = LinkedList()
