@@ -124,6 +124,14 @@ class LinkedList:
 
         curr_1.next, curr_2.next = curr_2.next, curr_1.next
 
+    def reverse_recursive_method(self):
+        prev, cur, = None, self.head
+        while cur:
+            nxt = cur.next
+            cur.next = prev
+            prev, cur = cur, nxt
+        self.head = prev
+
 
 
 node = LinkedList()
