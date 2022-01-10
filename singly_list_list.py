@@ -87,7 +87,7 @@ class LinkedList:
         return count
     
     def len_of_linked_list_using_recursive_method(self, node):
-        if node.next == None:
+        if node is None:
             return 0
         return 1 + self.len_of_linked_list_using_recursive_method(node.next)
 
