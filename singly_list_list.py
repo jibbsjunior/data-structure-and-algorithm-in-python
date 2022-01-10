@@ -78,6 +78,15 @@ class LinkedList:
             prev.next = cur_node.next
             cur_node = None
 
+    def len_of_linked_list_using_iterative_method(self):
+        count = 0
+        cur_node = self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+        return count
+
+
 node = LinkedList()
 node.append("A")
 node.append("B")
@@ -87,7 +96,8 @@ node.append("E")
 # print(node.insert_after_node(node.head.next, "M"))
 # print(node.delete_node("M"))
 # print(node.print_list())
-print(node.print_list())
-node.delete_node_at_pos(0)
-print(node.print_list())
+# print(node.print_list())
+# node.delete_node_at_pos(0)
+# print(node.print_list())
+print(node.len_of_linked_list_using_iterative_method())
     
