@@ -128,9 +128,24 @@ class LinkedList:
         prev, cur, = None, self.head
         while cur:
             nxt = cur.next
+            # print(nxt)
             cur.next = prev
+            # print(cur.next)
             prev, cur = cur, nxt
+            # print(prev, cur)
         self.head = prev
+
+    def reverse_recursive_method(self):
+
+        def _recusive_helper_method(cur, prev):
+            if not cur:
+                return prev
+
+            nxt, cur.next = cur.next, prev
+            prev, cur = cur, nxt
+            return _recusive_helper_method(cur, prev)
+
+        self.head = _recusive_helper_method(self.head, None)
 
 
 
@@ -160,6 +175,7 @@ node.append("E")
 # node.node_swap("E", "A")
 # print("Swapping key E and A where key A is the head node")
 # print(node.print_list())
-node.reverse_iterative_method()
+# node.reverse_iterative_method()
+node.reverse_recursive_method()
 print(node.print_list())
     
