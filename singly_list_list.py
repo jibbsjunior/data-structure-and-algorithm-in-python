@@ -92,18 +92,19 @@ class LinkedList:
         return 1 + self.len_of_linked_list_using_recursive_method(node.next)
     
     def node_swap(self, key_1, key_2):
+
         if key_1 == key_2:
             return
 
         prev_1, curr_1 = None, self.head
         #check is both the previous node found and curr1.data are not equals to key_1
-        while prev_1 and curr_1.data != key_1:
+        while curr_1 and curr_1.data != key_1:
             prev_1 = curr_1
             curr_1 = curr_1.next
 
         prev_2, curr_2 = None, self.head
         #check if both the previous node found and curr2.data are not equals to key_2
-        while prev_2 and curr_2.data != key_2:
+        while curr_2 and curr_2.data != key_2:
             prev_2 = curr_2
             curr_2 = curr_2.next
 
@@ -139,7 +140,16 @@ node.append("E")
 # print(node.print_list())
 # print(node.len_of_linked_list_using_iterative_method())
 # print(node.len_of_linked_list_using_recursive_method(node.head))
-print(node.node_swap("A", "B"))
-print("Swapping node A and B where key_1 is the head node")
-print(node.print_list())
+# print(node.node_swap("A", "B"))
+# print("Swapping node A and B where key_1 is the head node")
+# print(node.print_list())
+# print(node.node_swap("C", "E"))
+# print("Swapping node C and D where there's no head among the 2 node")
+# print(node.print_list())
+# print(node.node_swap("C", "C"))
+# print("Swapping key C and C where both keys are the same")
+# print(node.print_list())
+# node.node_swap("E", "A")
+# print("Swapping key E and A where key A is the head node")
+# print(node.print_list())
     
