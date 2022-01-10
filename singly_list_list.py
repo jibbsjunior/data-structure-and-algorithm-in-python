@@ -96,15 +96,18 @@ class LinkedList:
             return
 
         prev_1, curr_1 = None, self.head
+        #check is both the previous node found and curr1.data are not equals to key_1
         while prev_1 and curr_1.data != key_1:
             prev_1 = curr_1
             curr_1 = curr_1.next
 
         prev_2, curr_2 = None, self.head
+        #check if both the previous node found and curr2.data are not equals to key_2
         while prev_2 and curr_2.data != key_2:
             prev_2 = curr_2
             curr_2 = curr_2.next
 
+        #check if there's no curr_2 or curr_1 so far and break the function
         if not curr_2 or not curr_1:
             return
         
@@ -134,6 +137,9 @@ node.append("E")
 # print(node.print_list())
 # node.delete_node_at_pos(0)
 # print(node.print_list())
-print(node.len_of_linked_list_using_iterative_method())
-print(node.len_of_linked_list_using_recursive_method(node.head))
+# print(node.len_of_linked_list_using_iterative_method())
+# print(node.len_of_linked_list_using_recursive_method(node.head))
+print(node.node_swap("A", "B"))
+print("Swapping node A and B where key_1 is the head node")
+print(node.print_list())
     
