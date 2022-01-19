@@ -202,6 +202,19 @@ class LinkedList:
                 prev = cur
             cur = prev.next
 
+    def print_nth_to_last(self, n):
+        total_len = self.len_of_linked_list_using_iterative_method()
+        cur = self.head
+
+        while cur:
+            if total_len == n:
+                print(cur.data)
+                return cur.data
+            total_len -= 1
+            cur = cur.next
+        if cur is None:
+            return
+
 
 
 
