@@ -147,14 +147,61 @@ class LinkedList:
 
         self.head = _recusive_helper_method(self.head, None)
 
+    def merged_two_sorted_linked_list(self, llist): #Algorithm To solve this problem, we’ll use two pointers (p and q) which will each initially point to the head node of each linked list. There will be another pointer, s, that will point to the smaller value of data of the nodes that p and q are pointing to. Once s points to the smaller value of the data of nodes that p and q point to, p or q will move on to the next node in their respective linked list. If s and p point to the same node, p moves forward; otherwise q moves forward. The final merged linked list will be made from the nodes that s keeps pointing to. 
+        p = self.head
+        q = llist.head
+        s = None
+
+        if not p:
+            return q
+        
+        if not q:
+            return p
+
+        if p and q:
+            if p.data <= q.data:
+                s = p
+                p = s.next
+            else:
+                s = q
+                q = s.next
+            new_head = s
+
+        while p and q is not None:
+            if p.data <= q.data:
+                s.next = p
+                s = p
+                p = s.next
+            else:
+                s.next = q
+                s = q
+                q = s.next
+        
+        if not p:
+            s.next = q
+
+        if not q:
+            s.next = p
+        
+        self.head = new_head
+        return self.head
+
 
 
 node = LinkedList()
-node.append("A")
-node.append("B")
-node.append("C")
-node.append("D")
-node.append("E")
+node2 = LinkedList()
+node.append(1)
+node.append(3)
+node.append(5)
+node.append(7)
+node.append(9)
+node2.append(2)
+node2.append(4)
+node2.append(6)
+node2.append(8)
+node2.append(10)
+node.merged_two_sorted_linked_list(node2)
+print(node.print_list())
 # print(node.insert_after_node(node.head.next, "M"))
 # print(node.delete_node("M"))
 # print(node.print_list())
@@ -176,6 +223,27 @@ node.append("E")
 # print("Swapping key E and A where key A is the head node")
 # print(node.print_list())
 # node.reverse_iterative_method()
-node.reverse_recursive_method()
-print(node.print_list())
+# node.reverse_recursive_method()
+# print(node.print_list())
+# def func():
+#     x = 50
+#     print(x)
+
+# func()
+# print(x)
+# x = ['ab', 'bs']
+# print(list(map(len, x)))
+# print(list(map(len(x), x)))
+# print(list(map(x.len), x))
+# print(list(map(lambda x:len(x), x)))
+# print(2**(3**2), (2**3)**2, (2**3)**3)
+# list1 = [1,2,3,4,5]
+# list2 = [5,4,3,2,1]
+# print(list1 == list2)
+# print(set(list1) == set(list2))
+# l = [12,3,4,5]
+# new = l.copy()
+# # newL.copy(l)
+# newL = list(l)
+# print(newL)
     
