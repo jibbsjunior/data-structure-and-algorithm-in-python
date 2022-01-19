@@ -167,7 +167,7 @@ class LinkedList:
                 q = s.next
             new_head = s
 
-        while p and q is not None:
+        while p and q is not None: #this line can also be written like this - while p and q
             if p.data <= q.data:
                 s.next = p
                 s = p
@@ -185,6 +185,23 @@ class LinkedList:
         
         self.head = new_head
         return self.head
+
+    def remove_duplicates(self): #Algorithm - The general approach to solve this problem is to loop through the linked list once and keep track of all the data held at each of the nodes. We can use a hash table or Python dictionary to keep track of the data elements that we encounter. For example, if we encounter 6, we will add that to the dictionary or hash table and move along. Now if we meet another 6 and we check for it in our dictionary or hash table, then we’ll know that we already have a 6 and the current node is a duplicate.
+        cur = self.head
+        prev = None
+        duplicate_values = dict()
+
+        while cur:
+            if cur.data in duplicate_values:
+                #If the above condition is true then the current element already exist then we need to remove it because it is a duplicate
+                prev.next = cur.next
+                cur.next = None
+            else:
+                #Then we have not encountered the element before
+                duplicate_values[cur.data] = 1
+                prev = cur
+            cur = prev.next
+
 
 
 
