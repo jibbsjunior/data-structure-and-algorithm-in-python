@@ -252,6 +252,9 @@ class LinkedList:
             cur = cur.next
         return count
 
+    def count_occurences_recursive(self, node, data):
+        
+
 
 
 
