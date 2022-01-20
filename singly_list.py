@@ -209,7 +209,7 @@ class LinkedList:
 
             while cur:
                 if total_len == n:
-                    print(cur.data)
+                    # print(cur.data)
                     return cur.data
                 total_len -= 1
                 cur = cur.next
@@ -264,10 +264,11 @@ newll.append(3)
 newll.append(2)
 newll.append(1)
 newll.append(4)
+print(newll.print_nth_to_last(4, 2))
 # node.merged_two_sorted_linked_list(node2)
-print("Original Linked list: {}\n".format(newll.print_list()))
-newll.remove_duplicates()
-print("New linked list after removing duplicates: {}\n".format(newll.print_list()))
+# print("Original Linked list: {}\n".format(newll.print_list()))
+# newll.remove_duplicates()
+# print("New linked list after removing duplicates: {}\n".format(newll.print_list()))
 # print(node.insert_after_node(node.head.next, "M"))
 # print(node.delete_node("M"))
 # print(node.print_list())
