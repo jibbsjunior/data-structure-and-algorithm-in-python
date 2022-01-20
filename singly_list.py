@@ -224,10 +224,23 @@ class LinkedList:
                 #do something here
                 count = 0
                 while q:
-                    
+                    count += 1
+                    if count >= n:
+                        break
+                    q = q.next
+                if not q:
+                    print(str(n) + "is greater than the number of nodes in the list, please try again!")
+                    return
+                
+                while p and q.next:
+                    p = p.next
+                    q = q.next
+                return p.data
             else:
                 #break out of the method
                 return None
+        else:
+            print("Please select either method 1 or 2")
 
 
 
